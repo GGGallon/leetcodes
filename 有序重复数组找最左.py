@@ -5,30 +5,19 @@
 #
 # 你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。
 def fun(nums, target):
+    index = 100
     left = 0
     right = len(nums) - 1
-    if len(nums) == 0:
-        return [-1, -1]
-    if len(nums) == 1:
-        if nums[0] == target:
-            return [0, 0]
-        else:
-            return [-1, -1]
     while left <= right:
         mid = int((left + right) / 2)
-        if nums[mid] == target:
-            mid1 = mid2 = mid
-            while mid1 != 0 and nums[mid1 - 1] == target:
-                mid1 -= 1
-            while mid2 != len(nums) - 1 and nums[mid2 + 1] == target:
-                mid2 += 1
-            return [mid1, mid2]
-        if nums[mid] > target:
+        if nums[mid] >= target:
+            if index > mid:
+                index = mid
             right = mid - 1
         elif nums[mid] < target:
             left = mid + 1
-    return [-1, -1]
+    return index
 
 
-data = [1, 4]
-print(fun(data, 4))
+data = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+print(fun(data, 3))
