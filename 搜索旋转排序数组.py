@@ -31,4 +31,4 @@ def fun(nums, target):
     return -1
 
 
-print(fun([4, 5, 6, 7, 0, 1, 2], 3))
+print(fun([1, 0, 1, 1, 1], 0))

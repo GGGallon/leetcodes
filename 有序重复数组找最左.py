@@ -5,7 +5,7 @@
 #
 # 你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。
 def fun(nums, target):
-    index = 100
+    index = 1024
     left = 0
     right = len(nums) - 1
     while left <= right:
@@ -19,5 +19,5 @@ def fun(nums, target):
     return index
 
 
-data = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4]
-print(fun(data, 3))
+data = [5,7,7,8,8,10]
+print(fun(data, 8))
